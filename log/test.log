@@ -1,0 +1,164 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230320072603)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-03-20 07:54:14.843348"], ["updated_at", "2023-03-20 07:54:14.843348"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "b1d7532a41ac4c02c687246ad341ee6c9b33f036"], ["created_at", "2023-03-20 07:54:14.846769"], ["updated_at", "2023-03-20 07:54:14.846769"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/users" for 127.0.0.1 at 2023-03-20 13:24:14 +0530
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/users" for 127.0.0.1 at 2023-03-20 13:24:14 +0530
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/users/1" for 127.0.0.1 at 2023-03-20 13:24:14 +0530
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/users/1" for 127.0.0.1 at 2023-03-20 13:24:14 +0530
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/users" for 127.0.0.1 at 2023-03-20 13:24:56 +0530
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/users" for 127.0.0.1 at 2023-03-20 13:24:56 +0530
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/users/1" for 127.0.0.1 at 2023-03-20 13:24:56 +0530
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/users/1" for 127.0.0.1 at 2023-03-20 13:24:57 +0530
+Processing by Api::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+No template found for Api::UsersController#destroy, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 0.3ms | Allocations: 3161)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/users" for 127.0.0.1 at 2023-03-20 13:25:26 +0530
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1909)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/users" for 127.0.0.1 at 2023-03-20 13:25:26 +0530
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"John", "last_name"=>"Pandey", "email"=>"john12@gmail.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john12@gmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3503)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/users/1" for 127.0.0.1 at 2023-03-20 13:25:26 +0530
+Processing by Api::UsersController#update as HTML
+  Parameters: {"user"=>{"first_name"=>"John1", "last_name"=>"Pandey1", "email"=>"john.pandey@gmail.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "first_name" = ?, "last_name" = ?, "email" = ? WHERE "users"."id" = ?[0m  [["first_name", "John1"], ["last_name", "Pandey1"], ["email", "john.pandey@gmail.com"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1014)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/users/1" for 127.0.0.1 at 2023-03-20 13:25:26 +0530
+Processing by Api::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+No template found for Api::UsersController#destroy, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.2ms | Allocations: 1951)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/api/users" for 127.0.0.1 at 2023-03-20 13:28:42 +0530
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 2295)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/api/users" for 127.0.0.1 at 2023-03-20 13:28:43 +0530
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"John", "last_name"=>"Pandey", "email"=>"john12@gmail.com"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john12@gmail.com"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3503)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/users/1" for 127.0.0.1 at 2023-03-20 13:28:43 +0530
+Processing by Api::UsersController#update as HTML
+  Parameters: {"user"=>{"first_name"=>"John1", "last_name"=>"Pandey1", "email"=>"john.pandey@gmail.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "first_name" = ?, "last_name" = ?, "email" = ? WHERE "users"."id" = ?[0m  [["first_name", "John1"], ["last_name", "Pandey1"], ["email", "john.pandey@gmail.com"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1014)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email") VALUES (?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Pandey"], ["email", "john.pandey@gmail.coan"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/users/1" for 127.0.0.1 at 2023-03-20 13:28:43 +0530
+Processing by Api::UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+No template found for Api::UsersController#destroy, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.2ms | Allocations: 1951)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
